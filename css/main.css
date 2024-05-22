@@ -1,0 +1,1040 @@
+@charset 'utf-8';
+#container {
+  position: relative;
+  overflow: hidden;
+}
+.video {
+  aspect-ratio: 16/9;
+}
+.video iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.visual-video {
+  filter: grayscale(1);
+  position: relative;
+}
+.visual-video::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0) 39%,
+    rgba(0, 0, 0, 0) 56%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+/* Section 001. 엔플라잉 소개 */
+.nf-introduce {
+  width: 80%;
+  height: 53.9375rem;
+  color: #fff;
+  margin: -300px auto 0;
+  /* background: #5f5; */
+  transform: translateY(-12.5rem);
+
+  animation: reveal 1s both;
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nf-introduce .introduce-title {
+  display: flex;
+  align-items: flex-end;
+}
+
+.nf-introduce .introduce {
+  display: flex;
+  align-items: center;
+}
+.nf-introduce .introduce-pic {
+  margin-right: 9rem; /* introduce-pic과 introduce-info 사이의 간격을 조정합니다 */
+  top: 0;
+  left: 0;
+  width: 42rem;
+  height: 53.9375rem;
+}
+.nf-introduce .introduce-info {
+  position: relative;
+  width: 42.875rem;
+  height: 20.75rem;
+  top: 0;
+  left: 0;
+}
+
+.nf-introduce .introduce-pic,
+.nf-introduce .introduce-info {
+  display: flex;
+  align-items: center;
+}
+
+.nf-introduce .introduce-info h2 {
+  font-weight: 700;
+  font-size: 2.875rem;
+}
+
+.nf-introduce .introduce-info .title {
+  font-weight: 700;
+  font-size: 2.0625rem;
+}
+.nf-introduce .introduce-info strong {
+  display: flex;
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-top: 1.5625rem;
+  margin-bottom: 2.625rem;
+}
+.nf-introduce .introduce-info h2,
+.nf-introduce .introduce-info .title {
+  margin-right: 0.5625rem;
+}
+
+.nf-introduce .introduce-info .content {
+  color: var(--text-on-color);
+  font-weight: 500;
+  font-size: 1.25rem;
+  margin-bottom: 2.625rem;
+  line-height: 2.25rem;
+}
+.nf-introduce .introduce-info .btn-more {
+  font-weight: 400;
+  font-size: 1.25rem;
+}
+
+/* Section 002. 엔플라잉 뮤직비디오 */
+.music-video {
+  position: relative;
+  color: #fff;
+  padding: 16.125rem 0 25rem;
+  text-align: center;
+}
+.music-video h3 {
+  font-weight: 700;
+  font-size: 2.875rem;
+  margin-bottom: 4.125rem;
+}
+.music-video .video {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  z-index: 1;
+}
+/* 엔플라잉 뮤직비디오 bg */
+.music-video .background-image {
+  width: 100%;
+  height: 13.5625rem;
+  position: absolute;
+  bottom: 17.3125rem;
+}
+.music-video .background-image figure {
+  background: url(../img/music-video.bg.png) no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  transform: scale(2);
+}
+/* Section 003. 엔플라잉 멤버 소개 */
+.nf-member {
+  color: #fff;
+  overflow: hidden;
+  background: url(../img/nf-member-bg.png) 50% / cover;
+  padding-bottom: 12.5rem;
+}
+.nf-member .tab {
+  max-width: 68.75rem;
+  width: 85%;
+  margin: 0 auto;
+}
+.nf-member .tab .tab-menu {
+  display: flex;
+  gap: 4.375rem;
+  font-size: 1.4375rem;
+  font-weight: 700;
+  margin-bottom: 7rem;
+}
+.nf-member .tab-contents .con1 {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.nf-member .tab-contents .mem-profile {
+  width: 62%;
+}
+.nf-member .tab-contents .mem-profile h4 {
+  width: 88%;
+  position: relative;
+  text-align: right;
+  padding-right: 4.3625rem;
+  height: 6.625rem;
+}
+.nf-member .tab-contents .mem-profile h4::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 106%;
+  height: 3.4375rem;
+  background: var(--point-color);
+}
+.nf-member .tab-contents .mem-profile h4 b {
+  font-size: 3.75rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+
+.nf-member .tab-contents .mem-profile .con2 {
+  width: 60%;
+  margin-top: 4.375rem;
+}
+.nf-member .tab-contents .mem-profile p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+}
+.nf-member .tab-contents .mem-profile strong {
+  font-weight: 600;
+  font-size: 2.375rem;
+}
+.nf-member .tab-contents .mem-profile b {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: #efefef;
+}
+.nf-member .tab-contents .mem-profile dl {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping of items */
+  width: 28.3125rem;
+  margin-bottom: 4.8125rem;
+  line-height: 2.5rem;
+}
+.nf-member .tab-contents .mem-profile dt {
+  font-weight: 400;
+  font-size: 1.3125rem;
+  color: var(--memtitle);
+}
+.nf-member .tab-contents .mem-profile dt {
+  flex: 1 1 15%;
+  /*   background: #f55; */
+}
+.nf-member .tab-contents .mem-profile dd {
+  font-weight: 400;
+  font-size: 1.3125rem;
+  color: var(--text-off);
+}
+.nf-member .tab-contents .mem-profile dd {
+  flex: 1 1 77%;
+  /*   background: #5f5; */
+}
+.nf-member .btn-more-view {
+  padding: 0;
+}
+
+/* Section 005. 앨범 */
+.nf-album {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  padding: 372.48px 0 334px;
+  overflow: hidden;
+  /* padding-left: 10vw; /* 제목 위치 */
+  z-index: 1;
+  background: url(../img/album-bg.png) 50% / cover;
+}
+.nf-album h3 {
+  /*   border: 1px solid #fff; */
+  position: relative;
+  height: 110px;
+  width: 50%;
+  margin-left: auto;
+  margin-bottom: 64px;
+}
+.nf-album h3 b {
+  font-weight: 700;
+  font-size: 60px;
+  position: relative;
+  left: -4px;
+  z-index: 1;
+}
+.nf-album h3::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -39px;
+  width: 100%;
+  height: 3.6rem;
+  background: var(--point-color);
+}
+
+/* 앨범과 가로로 배치 */
+.nf-album .boxWrap {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  align-items: center;
+}
+
+.nf-album .album-pic {
+  /*   border: 1px solid #ff0; */
+  width: 50%;
+
+  display: flex;
+  justify-content: center;
+}
+.album-pic-inner {
+  width: 60%;
+  height: 300px;
+  position: relative;
+}
+.nf-album .album-pic .album-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 65%;
+}
+.nf-album .album-pic .album-cover img {
+  display: block;
+}
+.nf-album .album-pic .album-lp {
+  border-radius: 50%;
+  box-shadow: 3px 0 27px rgba(0, 0, 0, 0.5);
+  width: 65%;
+  aspect-ratio: 1/1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  animation: lp-ani 10s linear infinite;
+}
+
+@keyframes lp-ani {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.nf-album .album-con {
+  width: 50%;
+}
+.nf-album .album-con .album-info {
+  width: 100%;
+  height: 164px;
+}
+.nf-album .album-con .album-info h4 {
+  font-weight: 600;
+  font-size: 26px;
+  color: #efefef;
+  margin-bottom: 50px;
+}
+.nf-album .album-con .album-info p {
+  font-weight: 400;
+  font-size: 18px;
+  color: #e4e4e4;
+}
+.nf-album .album-list {
+  display: flex;
+  margin-top: 53px;
+  width: 100%;
+  padding-right: 20px;
+}
+.nf-album .album-list li {
+  display: inline-block; /* 리스트를 가로로 배치합니다 */
+  vertical-align: top; /* 요소를 상단에 정렬합니다 */
+  margin-right: 38px; /* 요소들 사이의 간격을 38px로 조정합니다 */
+}
+.nf-album .album-list li:last-child {
+  margin-right: 0;
+}
+.nf-album .arrowBox {
+  margin-top: 40px;
+  font-size: 20px;
+  display: flex;
+  gap: 79px;
+  cursor: pointer;
+}
+.nf-album .arrowBox button {
+  color: var(--title-color);
+  background-color: transparent;
+}
+.nf-album .arrowBox button::after {
+  content: '';
+}
+/* Section 004. 흘러가~ */
+.nf-ani {
+  margin-left: auto;
+  margin-top: 200px;
+  gap: 50px;
+  overflow: hidden;
+}
+
+.top,
+.bottom {
+  display: flex;
+}
+
+.top ul li img,
+.bottom ul li img {
+  max-width: initial;
+}
+
+.top ul {
+  animation: testAni 30s linear infinite;
+  display: flex;
+  gap: 32px;
+  margin-bottom: 21px;
+}
+.bottom ul {
+  animation: testAni 30s linear infinite reverse;
+  display: flex;
+  gap: 32px;
+}
+
+@keyframes testAni {
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Section 006. 공지 */
+.notice {
+  color: #fff;
+  padding: 450px 0;
+  text-align: center;
+  background: url(../img/Notice-bg.png) no-repeat 50% / cover;
+
+  /* width: 2038px;
+  height: 1551px; */
+}
+.notice h3 {
+  position: relative;
+  /*   border: 1px solid #fff; */
+  text-align: center;
+  width: 100%;
+  height: 118px;
+}
+.notice h3 b {
+  font-weight: 700;
+  font-size: 70px;
+  position: relative;
+  z-index: 1;
+}
+.notice h3::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+  width: 554px;
+  height: 3.4rem;
+  background: var(--point-color);
+}
+
+.notice-wrap ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 69px 224px;
+  justify-content: center;
+  margin-top: 137px;
+}
+.notice-wrap ul li {
+  /*  border: 1px solid #000; */
+  display: flex;
+}
+.notice ul li a {
+  border-bottom: 1px solid #fff;
+  display: flex;
+  width: 511px;
+  padding: 30px 28px;
+  gap: 60px;
+}
+.notice ul li a time {
+  font-weight: 700;
+  font-size: 20px;
+}
+.notice ul li a p {
+  text-align: left;
+  font-weight: 400;
+  font-size: 18px;
+}
+.notice .notice-wrap {
+}
+.notice .btn-more-view {
+  margin-top: 107px;
+  display: inline-flex;
+  padding: 15px 30px;
+}
+.btn-more-view::after {
+  content: '';
+}
+
+/* a */
+/* Tablet Version (w768) */
+@media only screen and (max-width: 768px) {
+  .video iframe {
+    width: 100%;
+    height: 125%;
+  }
+  /* Section 001. 엔플라잉 소개 */
+  .nf-introduce {
+    width: 100%; /* 테블릿 버전에서 전체 너비를 사용하도록 변경합니다. */
+    padding: 180px 92px; /* 좌우 여백을 조정합니다. */
+    height: auto; /* 높이를 자동으로 설정합니다. */
+  }
+
+  .nf-introduce .introduce {
+    flex-direction: column; /* 테블릿 버전에서 섹션을 세로로 배치합니다. */
+    align-items: flex-start; /* 요소를 좌측 정렬합니다. */
+    text-align: left; /* 텍스트를 좌측 정렬합니다. */
+  }
+  .nf-introduce .introduce-pic,
+  .nf-introduce .introduce-info {
+    margin-right: 0; /* 간격을 제거합니다. */
+    width: 100%; /* 너비를 100%로 설정합니다. */
+    height: auto; /* 높이를 자동으로 설정합니다. */
+  }
+  .nf-introduce .introduce-info {
+    /*    padding: 64px 0; /* 상하 여백을 조정합니다. */
+    margin-top: 64px;
+    margin-left: 46px;
+  }
+  .nf-introduce .introduce-info h2 {
+    font-size: 36px;
+  }
+  .nf-introduce .introduce-info .title {
+    font-size: 26px;
+  }
+  .nf-introduce .introduce-info h2,
+  .nf-introduce .introduce-info .title {
+    margin-right: 10px; /* 간격을 제거합니다. */
+  }
+
+  .nf-introduce .introduce-info strong {
+    margin-top: 34px;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 21px;
+  }
+  .nf-introduce .introduce-info .content {
+    font-weight: 500;
+    font-size: 17px; /* 폰트 사이즈를 조정합니다. */
+    line-height: 2; /* 줄 간격을 조정합니다. */
+  }
+
+  /* Section 002. 엔플라잉 뮤직비디오 */
+  .music-video {
+    padding: 100px 0; /* 패딩을 조정합니다. */
+  }
+  .music-video h3 {
+    font-size: 26px; /* 폰트 사이즈를 조정합니다. */
+    margin-bottom: 30px; /* 하단 여백을 조정합니다. */
+  }
+  .music-video .video {
+    width: 100%; /* 너비를 100%로 설정합니다. */
+    height: auto; /* 높이를 자동으로 설정합니다. */
+  }
+
+  /* Section 003. 엔플라잉 멤버 소개 */
+  .nf-member {
+    padding: 100px 0; /* 패딩을 조정합니다. */
+  }
+  .nf-member .tab .tab-menu {
+    flex-wrap: wrap; /* 가로로 길어지는 메뉴를 여러 줄로 나눕니다. */
+    gap: 49px; /* 간격을 조정합니다. */
+    font-size: 16px; /* 폰트 사이즈를 조정합니다. */
+  }
+  .nf-member .tab-contents .mem-profile strong {
+    font-weight: 600;
+    font-size: 28px;
+  }
+  .nf-member .tab-contents .mem-profile h4 {
+    font-size: 50px; /* 폰트 사이즈를 조정합니다. */
+    margin-top: 39px; /* 상단 여백을 조정합니다. */
+  }
+  .nf-member .tab-contents .mem-profile h4::before {
+    content: '';
+    position: absolute;
+    top: 35%;
+    bottom: 0;
+    left: 0;
+    width: 95%;
+    height: 6.4rem;
+    background: var(--point-color);
+  }
+  .nf-member .tab-contents .mem-profile .con2 {
+    width: 352px;
+    margin-top: 32px;
+  }
+
+  .nf-member .tab-contents .mem-profile {
+    width: 439px;
+  }
+  .nf-member .tab-contents .mem-profile h4 b {
+    font-size: 50px;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+  }
+
+  .nf-member .tab-contents .mem-profile p {
+    font-size: 16px; /* 폰트 사이즈를 조정합니다. */
+    margin-bottom: 20px; /* 하단 여백을 조정합니다. */
+    color: var(--memstrong);
+  }
+  .nf-member .tab-contents .mem-profile dl {
+    width: 100%; /* 너비를 100%로 설정합니다. */
+    margin-top: 21px;
+    margin-bottom: 58px;
+  }
+  .nf-member .tab-contents .mem-profile dt {
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--text-on-color);
+  }
+  .nf-member .tab-contents .mem-profile dd {
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--text-on-color);
+  }
+
+  .nf-member .btn-more-view {
+    font-weight: 400;
+    font-size: 16px;
+  }
+  /* Section 004. 엔플라잉 앨범 소개 */
+  .nf-album {
+    padding: 100px 0; /* 패딩을 조정합니다. */
+  }
+  .nf-album h3 {
+    position: relative;
+    margin-left: 0; /* 여백을 제거합니다. */
+    text-align: center; /* 텍스트를 가운데 정렬합니다. */
+    padding-left: 0; /* 여백을 제거합니다. */
+    margin-bottom: 103px;
+    height: 100px;
+  }
+  .nf-album h3 b {
+    font-size: 50px; /* 폰트 사이즈를 조정합니다. */
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+  }
+  .nf-album h3::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6.6rem;
+    background: var(--point-color);
+  }
+  .nf-album .boxWrap {
+    flex-direction: column; /* 테블릿 버전에서 세로로 배치합니다. */
+    align-items: center; /* 요소를 가운데 정렬합니다. */
+  }
+  .nf-album .album-pic,
+  .nf-album .album-con {
+    width: 78.9247%;
+  }
+  .nf-album .album-pic .album-cover {
+  }
+  .nf-album .album-pic .album-lp {
+  }
+
+  .nf-album .album-con .album-info {
+    width: auto;
+    text-align: center; /* 텍스트를 가운데 정렬합니다. */
+    height: auto;
+  }
+  .nf-album .album-con .album-info h4 {
+    font-weight: 600;
+    font-size: 26px;
+    color: var(--album-title);
+    margin-top: 44px;
+    margin-bottom: 21px;
+  }
+  .nf-album .album-con .album-info p {
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--text-on-color);
+  }
+  .nf-album .album-list {
+    overflow-x: auto; /* 가로 스크롤을 추가합니다. */
+    width: auto; /* 너비를 자동으로 설정합니다. */
+
+    white-space: nowrap; /* 요소들이 줄바꿈되지 않도록 설정합니다. */
+  }
+  .nf-album .album-list li {
+    margin-right: 17px;
+  }
+  .nf-album .arrowBox {
+    gap: 62px; /* 간격을 조정합니다. */
+    margin-top: 49px;
+    justify-content: center;
+  }
+  /* Section 006. 공지 */
+  .notice h3 {
+    position: relative;
+    /* border: 1px solid #fff; */
+    text-align: center;
+    width: 100%;
+    height: 96px;
+  }
+  .notice h3 b {
+    font-weight: 700;
+    font-size: 50px;
+    position: relative;
+    z-index: 1;
+  }
+  .notice h3::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: center;
+    width: 691px;
+    height: 6.4rem;
+    background: var(--point-color);
+  }
+  .notice-wrap ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 58px 224px;
+    justify-content: center;
+    margin-top: 64px;
+  }
+  .notice ul li a time {
+    font-weight: 500;
+    font-size: 26.09px;
+  }
+  .notice ul li a p {
+    text-align: left;
+    font-weight: 400;
+    font-size: 16px;
+  }
+  .notice .btn-more-view {
+    margin-top: 74px;
+    display: inline-flex;
+    padding: 15px 30px;
+  }
+}
+/* mobile Version (w768) */
+@media only screen and (max-width: 375px) {
+  .video iframe {
+    width: 100%;
+    height: 161%;
+  }
+  /* Section 001. 엔플라잉 소개 */
+  .nf-introduce {
+    width: 100%; /* 테블릿 버전에서 전체 너비를 사용하도록 변경합니다. */
+    padding: 0 0; /* 좌우 여백을 조정합니다. */
+    margin-top: -2.6rem;
+    height: auto; /* 높이를 자동으로 설정합니다. */
+  }
+
+  .nf-introduce .introduce {
+    flex-direction: column; /* 테블릿 버전에서 섹션을 세로로 배치합니다. */
+    align-items: flex-start; /* 요소를 좌측 정렬합니다. */
+    text-align: left; /* 텍스트를 좌측 정렬합니다. */
+  }
+  .nf-introduce .introduce-pic,
+  .nf-introduce .introduce-info {
+    margin-right: 0; /* 간격을 제거합니다. */
+    width: 100%; /* 너비를 100%로 설정합니다. */
+    height: auto; /* 높이를 자동으로 설정합니다. */
+  }
+  .nf-introduce .introduce-info {
+    /*    padding: 64px 0; /* 상하 여백을 조정합니다. */
+    margin-top: 28px;
+    margin-left: auto;
+  }
+  .nf-introduce .introduce-info h2 {
+    font-size: 36px;
+  }
+  .nf-introduce .introduce-info .title {
+    font-size: 26px;
+  }
+  .nf-introduce .introduce-info h2,
+  .nf-introduce .introduce-info .title {
+    margin-right: 10px; /* 간격을 제거합니다. */
+  }
+
+  .nf-introduce .introduce-info strong {
+    margin-top: 16px;
+    font-weight: 600;
+    font-size: 19px;
+    margin-bottom: 20px;
+  }
+  .nf-introduce .introduce-info .content {
+    font-weight: 500;
+    font-size: 13px; /* 폰트 사이즈를 조정합니다. */
+    line-height: 2; /* 줄 간격을 조정합니다. */
+  }
+  .nf-introduce .introduce-info .btn-more {
+    font-weight: 400;
+    font-size: 15px;
+  }
+
+  /* Section 002. 엔플라잉 뮤직비디오 */
+  .music-video {
+    padding: 100px 0; /* 패딩을 조정합니다. */
+  }
+  .music-video h3 {
+    font-size: 18px; /* 폰트 사이즈를 조정합니다. */
+    margin-bottom: 39px; /* 하단 여백을 조정합니다. */
+  }
+  .music-video .video {
+    width: 100%; /* 너비를 100%로 설정합니다. */
+    height: auto; /* 높이를 자동으로 설정합니다. */
+  }
+
+  /* Section 003. 엔플라잉 멤버 소개 */
+  .nf-member {
+    padding: 100px 0; /* 패딩을 조정합니다. */
+  }
+
+  .nf-member .tab .tab-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 37px;
+    font-size: 12px;
+  }
+
+  .nf-member .tab-contents .con1 {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  .nf-member .tab-contents .mem-profile {
+    width: 100%;
+  }
+  .nf-member .tab-contents .mem-profile strong {
+    font-weight: 600;
+    font-size: 24px;
+  }
+  .nf-member .tab-contents .mem-profile b {
+    font-weight: 600;
+    font-size: 14px;
+    color: #efefef;
+  }
+
+  .nf-member .tab-contents .mem-profile h4 {
+    /* border: 1px solid #fff; */
+    margin-top: 36px;
+    font-size: 30px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    display: flex; /* 수정된 부분: 텍스트를 수평으로 가운데 정렬하기 위해 flex를 사용합니다. */
+    justify-content: center; /* 수정된 부분: 텍스트를 수평으로 가운데 정렬하기 위해 justify-content를 사용합니다. */
+    padding-right: 0;
+    height: 98px;
+  }
+
+  .nf-member .tab-contents .mem-profile h4::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5.4rem;
+    background: var(--point-color);
+  }
+
+  .nf-member .tab-contents .mem-profile .con2 {
+    width: 352px;
+    margin-top: 32px;
+  }
+
+  .nf-member .tab-contents .mem-profile h4 b {
+    font-size: 50px;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+  }
+
+  .nf-member .tab-contents .mem-profile p {
+    font-size: 16px; /* 폰트 사이즈를 조정합니다. */
+    margin-bottom: 20px; /* 하단 여백을 조정합니다. */
+    color: var(--memstrong);
+  }
+  .nf-member .tab-contents .mem-profile dl {
+    width: 100%; /* 너비를 100%로 설정합니다. */
+    margin-top: 21px;
+    margin-bottom: 58px;
+  }
+  .nf-member .tab-contents .mem-profile dt {
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--title-color);
+  }
+  .nf-member .tab-contents .mem-profile dd {
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--title-color);
+  }
+
+  .nf-member .btn-more-view {
+    font-weight: 400;
+    font-size: 16px;
+  }
+  /* Section 004. 엔플라잉 앨범 소개 */
+  .nf-album {
+    padding: 100px 0; /* 패딩을 조정합니다. */
+  }
+
+  .nf-album h3 {
+    position: relative;
+    margin-left: 0; /* 여백을 제거합니다. */
+    text-align: center; /* 텍스트를 가운데 정렬합니다. */
+    padding-left: 0; /* 여백을 제거합니다. */
+    margin-bottom: 65px;
+    height: 82px;
+  }
+  .nf-album h3 b {
+    font-size: 44px; /* 폰트 사이즈를 조정합니다. */
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+  }
+  .nf-album h3::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5.4rem;
+    background: var(--point-color);
+  }
+  .nf-album .boxWrap {
+    flex-direction: column; /* 테블릿 버전에서 세로로 배치합니다. */
+    align-items: center; /* 요소를 가운데 정렬합니다. */
+  }
+  .nf-album .album-pic,
+  .nf-album .album-con {
+    width: 78.9247%;
+  }
+  .nf-album .album-pic .album-cover {
+  }
+  .nf-album .album-pic .album-lp {
+  }
+
+  .nf-album .album-con .album-info {
+    width: auto;
+    text-align: center; /* 텍스트를 가운데 정렬합니다. */
+    height: auto;
+  }
+  .nf-album .album-con .album-info h4 {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--album-title);
+    margin-top: 23px;
+    margin-bottom: 13px;
+  }
+  .nf-album .album-con .album-info p {
+    font-weight: 400;
+    font-size: 10px;
+    color: var(--text-on-color);
+  }
+  .nf-album .album-list {
+    overflow-x: auto; /* 가로 스크롤을 추가합니다. */
+    width: auto; /* 너비를 자동으로 설정합니다. */
+    margin-top: 30px;
+
+    white-space: nowrap; /* 요소들이 줄바꿈되지 않도록 설정합니다. */
+  }
+  .nf-album .album-list li {
+    margin-right: 17px;
+  }
+  .nf-album .arrowBox {
+    gap: 34px; /* 간격을 조정합니다. */
+    margin-top: 13px;
+    justify-content: center;
+  }
+  /* Section 006. 공지 */
+  .notice {
+    color: #fff;
+    padding: 343px 0;
+    text-align: center;
+    background: url(../img/Notice-bg.png) no-repeat 10% / cover;
+  }
+  .notice h3 {
+    position: relative;
+    /* border: 1px solid #fff; */
+    text-align: center;
+    width: 100%;
+    height: 88px;
+  }
+  .notice h3 b {
+    font-weight: 700;
+    font-size: 50px;
+    position: relative;
+    z-index: 1;
+  }
+  .notice h3::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateX(0);
+    align-items: center;
+    width: 331px;
+    height: 5.4rem;
+    background: var(--point-color);
+  }
+  .notice-wrap ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px 224px;
+    justify-content: center;
+    margin-top: 64px;
+  }
+  .notice ul li a {
+    border-bottom: 1px solid #fff;
+    display: flex;
+    width: 300px;
+    padding: 27px 8px;
+    gap: 30px;
+  }
+  .notice ul li a time {
+    font-weight: 500;
+    font-size: 17px;
+  }
+  .notice ul li a p {
+    text-align: left;
+    font-weight: 400;
+    font-size: 12px;
+  }
+  .notice-wrap ul li {
+    /* border: 1px solid #000; */
+    display: flex;
+    width: 90%;
+  }
+  .notice .btn-more-view {
+    margin-top: 40px;
+    display: inline-flex;
+    padding: 15px 30px;
+  }
+}

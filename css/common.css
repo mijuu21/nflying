@@ -1,0 +1,352 @@
+@charset 'utf-8';
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+
+/* Common */
+:root {
+  font-size: 100%;
+
+  /* color */
+  --title-color: #fff;
+  --strong-color: #efefef;
+  --text-on-color: #acacac;
+  --album-title: #e4e4e4;
+  --text-off: #a0a0a0;
+  --point-color: #d02221;
+  --foot-color: #cacaca;
+  --memstrong: #d4d4d4;
+  --memtitle: #dbdbdb;
+  --bg: #000;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--point-color);
+}
+::selection {
+  background: var(--point-color);
+  color: #fff;
+}
+
+img {
+  max-width: 100%;
+}
+label:hover,
+button:hover {
+  cursor: pointer;
+}
+
+hr,
+.hidden {
+  position: absolute;
+  margin: -0.0625rem;
+  width: 0.0625rem;
+  height: 0.0625rem;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+body {
+  background-color: var(--bg);
+  font: 1rem/1.6 'Pretendard', sans-serif;
+  color: var(--title-color);
+  word-break: keep-all;
+  letter-spacing: -0.005rem;
+  overflow-x: hidden;
+}
+.inner {
+  width: 100%;
+  max-width: 1300px;
+  height: 100%;
+  margin: 0 auto;
+  /*   background: rgb(255, 255, 0, 0.3); */
+}
+.notice-inner {
+  width: 77.875rem;
+  margin: 0 auto;
+}
+/* header */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+header .util-menu {
+  display: none;
+  width: 5rem;
+  height: 100%;
+
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6.25rem;
+  padding-left: 37px;
+  padding-right: 37px;
+}
+.logo a {
+  display: block;
+  width: 6.5rem;
+  height: 1.8125rem;
+  background: url(../img/logo.svg) no-repeat 50%;
+}
+.gnb {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.0625rem;
+}
+.gnb li a {
+  display: block;
+  padding: 0 1rem;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--title-color);
+}
+.gnb li a::after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 0.1875rem;
+  background: var(--point-color);
+  transition: 0.4s;
+  margin: 0.625rem auto;
+}
+header .language {
+  display: flex;
+  gap: 1.6vw;
+  right: 3vw;
+  position: relative;
+  z-index: 100;
+}
+header .language .on {
+  opacity: 1;
+}
+header .language a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  opacity: 0.5;
+}
+header nav a,
+header .language a {
+  transition: 0.3s ease;
+  color: #fff;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.0625rem;
+}
+header .language a:before {
+  left: -0.5rem;
+}
+header .language a:before,
+header .language a:after {
+  content: '';
+  width: 0;
+  background: #fff;
+  height: 100%;
+  position: absolute;
+  display: inline-block;
+  transition: 0.3s ease;
+}
+span,
+strong,
+a {
+  display: inline-block;
+}
+header .language a:after {
+  right: -0.5rem;
+}
+
+header .util-menu span {
+  height: 1rem;
+  width: 1.25rem;
+  position: relative;
+  z-index: 100;
+}
+
+header .util-menu span:before {
+  top: 0;
+}
+
+header .util-menu span:after {
+  bottom: 0;
+}
+header .util-menu span:before,
+header .util-menu span:after {
+  content: '';
+  width: 100%;
+  height: 0.1875rem;
+  display: block;
+  background: #fff;
+  position: absolute;
+  transition: 0.5s ease;
+}
+/* footer */
+#footer {
+  padding: 5.875rem 0;
+  background: var(--bg); /* footer 배경색  */
+  color: var(--foot-color);
+  text-align: center;
+}
+.foot-logo {
+  display: block;
+  width: 6.7031rem;
+  height: 1.8219rem;
+  background: url(../img/footer-logo.svg) no-repeat 50% / cover;
+  margin: 0 auto 2.0481rem; /* 위쪽과 아래쪽은 32.77px, 좌우는 자동으로 설정 */
+}
+#footer .sns-list li {
+  display: inline-block; /* 로고를 가로로 : 반응형일땐 flex로 바꾸기 */
+  margin-right: 1.5625rem; /* 각 SNS 아이콘 사이의 간격을 조정할 수 있습니다. */
+}
+.sns-list li a {
+  display: block;
+  width: 1.625rem; /* 각 SNS 아이콘의 너비를 조정 */
+  height: 1.625rem; /* 각 SNS 아이콘의 높이를 조정 */
+  background: no-repeat 50%;
+}
+.sns-list li:nth-child(1) a {
+  background-image: url('../img/sns-youtube.svg'); /* 유튜브 아이콘 */
+}
+.sns-list li:nth-child(2) a {
+  background-image: url('../img/sns-Instagram.svg'); /* 인스타그램 아이콘 */
+}
+.sns-list li:nth-child(3) a {
+  background-image: url('../img/sns-twitter.svg'); /* 트위터 아이콘 */
+}
+.sns-list li:nth-child(4) a {
+  background-image: url('../img/sns-facebook.svg'); /* 페이스북 아이콘 */
+}
+.sns-list li:nth-child(5) a {
+  background-image: url('../img/sns-nfia.svg'); /* 팬 카페 아이콘 */
+}
+#footer p {
+  font-weight: 300; /* 폰트 굵기 정하기 */
+  font-size: 0.75rem; /* 폰트 사이즈 정하기 */
+  color: var(--foot-color); /* 폰트 색상 */
+  margin-top: 2rem; /* 여백주기 */
+}
+@media only screen and (max-width: 1200px) {
+  header .language {
+    display: none;
+    gap: 1.6vw;
+    right: 3vw;
+    position: relative;
+    z-index: 100;
+  }
+}
+/* Tablet Version (w768) */
+@media only screen and (max-width: 768px) {
+  :root {
+    font-size: 50%; /* PC 버전에 비해 폰트 크기를 줄입니다. */
+  }
+
+  .inner {
+    width: 90%; /* 화면 너비의 90%만 사용합니다. */
+  }
+
+  .logo a {
+    width: 13.5rem;
+    height: 5.8125rem;
+  }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 6.25rem;
+    padding: 0;
+  }
+  .gnb {
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.0625rem;
+  }
+
+  header .language {
+    display: none;
+    gap: 1.6vw;
+    right: 3vw;
+    position: relative;
+    z-index: 100;
+  }
+  header .util-menu {
+    display: flex;
+  }
+  header .util-menu span {
+    height: 2rem;
+    width: 3.25rem;
+    position: relative;
+    z-index: 100;
+  }
+
+  header .util-menu span:before,
+  header .util-menu span:after {
+    height: 0.55rem;
+  }
+
+  /* footer */
+  #footer {
+    padding: 3.75rem 0; /* 푸터의 패딩을 조정합니다. */
+  }
+  .foot-logo {
+    width: 5.625rem; /* 푸터 로고의 크기를 조정합니다. */
+    height: 1.5375rem;
+    margin: 0 auto 1.25rem; /* 로고의 아래 여백을 조정합니다. */
+  }
+  #footer .sns-list li {
+    margin-right: 1.25rem; /* SNS 아이콘 사이의 간격을 조정합니다. */
+  }
+  #footer p {
+    margin-top: 1.25rem; /* 푸터 내부의 여백을 조정합니다. */
+  }
+}
+/* Tablet Version (w375) */
+@media only screen and (max-width: 375px) {
+  :root {
+    font-size: 50%; /* PC 버전에 비해 폰트 크기를 줄입니다. */
+  }
+
+  .inner {
+    width: 90%; /* 화면 너비의 90%만 사용합니다. */
+  }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 6.25rem;
+  }
+  header .util-menu span {
+    height: 1rem;
+    width: 1.25rem;
+    position: relative;
+    z-index: 100;
+  }
+
+  /* footer */
+  #footer {
+    padding: 2.1875rem 0; /* 푸터의 패딩을 조정합니다. */
+  }
+  .foot-logo {
+    width: 5.625rem; /* 푸터 로고의 크기를 조정합니다. */
+    height: 1.5375rem;
+    margin: 0 auto 1.25rem; /* 로고의 아래 여백을 조정합니다. */
+  }
+  #footer .sns-list li {
+    margin-right: 1.25rem; /* SNS 아이콘 사이의 간격을 조정합니다. */
+  }
+  #footer p {
+    margin-top: 1.25rem; /* 푸터 내부의 여백을 조정합니다. */
+  }
+}
